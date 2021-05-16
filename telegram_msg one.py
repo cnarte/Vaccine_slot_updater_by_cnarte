@@ -25,7 +25,7 @@ headers = {'user-agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_11_6) AppleW
             "Authorization": "auth_bear"
             ,"Accept-Language": "en_US"}
 
-def send_mail(date):
+def send_msg(date):
     with requests.session() as session:
         fin_end_point = url_for_findbydist+f"?district_id={district_id}&date={date}"
         response = session.get(url = fin_end_point,headers=headers)
@@ -73,7 +73,7 @@ while True:
 
         for date in datelist:
             date = date.strftime("%d-%m-%Y")
-            send_mail(date)
+            send_msg(date)
 
     time.sleep(1000)
 
